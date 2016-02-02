@@ -47,7 +47,7 @@ gem 'redcarpet'
 #Use SQLite
 #gem 'sqlite3', '1.3.11'
 gem 'acts-as-taggable-on', '~> 3.4'
-
+gem 'protected_attributes'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -56,3 +56,4 @@ gem 'acts-as-taggable-on', '~> 3.4'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+gem "will_paginate", "~> 3.0.4" 

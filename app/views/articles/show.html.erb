@@ -1,11 +1,17 @@
+<div class="container">
 <p>
   <strong>Title:</strong>
-  <%= @article.title %>
+  <div class="card">
+        	<h5 class="card-title"><%= @article.title %></h5>
+  </div>
 </p>
  
 <p>
   <strong>Text:</strong>
-  <%= @article.body %>
+   <div class="card">
+   	<h7 class="card-title"><%= @article.body %></h7>
+  </div>
+  
 </p>
  
 <h2>Comments</h2>
@@ -13,6 +19,8 @@
  
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
+
  
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Edit', edit_article_path(@article),class: 'btn btn-primary' %> 
+<%= link_to 'Back', articles_path,class: 'btn btn-warning' %>
+</div>

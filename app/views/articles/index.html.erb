@@ -1,7 +1,10 @@
-
 <div class="container">
 
 <h1>Khoi Nguyen's assignment blog</h1>
+<%= form_tag(articles_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Title or body" %>
+<%= submit_tag "Search",:name =>nil %>
+<% end %>
 <h3> My first Rails Application for CoderSchool assignment!</h3>
 
 <%= render @articles %>
