@@ -13,7 +13,13 @@
   </div>
   
 </p>
- 
+ <% @article.tags.any? %>
+     <% @article.tags.each do |tag| %>
+     <span class="label label-info">
+            <%= link_to tag.name, tag_path(tag.name) %>
+          </span> 
+     
+<% end %>
 <h2>Comments</h2>
 <%= render @article.comments %>
  

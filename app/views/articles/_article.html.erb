@@ -10,8 +10,16 @@
         <%= link_to 'Delete', article_path(article),class: 'btn btn-danger',
               method: :delete,
               data: { confirm: 'Are you sure?' }%>
-         <%= link_to 'Comments',article_path(article),class: 'btn btn-warning' %>     
+         <%= link_to 'Comments',article_path(article),class: 'btn btn-warning' %> 
+         <br>  
+         <% article.tags.any? %>
+          <% article.tags.each do |tag| %>
+          <span class="label label-info">
+            <%= link_to tag.name, tag_path(tag.name) %>
+          </span> 
+        <% end %>  
       </div>
     </div>
   </div>
 </div>
+
