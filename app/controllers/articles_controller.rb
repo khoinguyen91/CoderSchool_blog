@@ -1,10 +1,12 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  impressionist actions: [:show]
 
   # GET /articles
   # GET /articles.json
   def index
     #@articles = Article.all
+     
     if params[:search]
       @articles = Article.search(params[:search])
     #@articles = Article.where(["title || body like ?","%#{params[:search]}%"])

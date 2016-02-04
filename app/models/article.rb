@@ -5,12 +5,13 @@ class Article < ActiveRecord::Base
                     length: { minimum: 5 }
   attr_accessible :title, :body, :tag_list
   acts_as_taggable
+  is_impressionable
   def self.search(search)
-  		if search 
-  			where('title like ?', '%#{search}%') 
- 			where('body like ?', '%#{search}%')
- 		else
- 			all
-   		end
+  	if search 
+  		where('title like ?', '%#{search}%') 
+ 		where('body like ?', '%#{search}%')
+ 	else
+ 		all
+   	end
   end
 end

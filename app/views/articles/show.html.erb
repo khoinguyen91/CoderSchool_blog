@@ -2,14 +2,14 @@
 <p>
   <strong>Title:</strong>
   <div class="card">
-        	<h5 class="card-title"><%= @article.title %></h5>
+        	<h6 class="card-title"><%= @article.title %></h6>
   </div>
 </p>
  
 <p>
   <strong>Text:</strong>
    <div class="card">
-   	<h7 class="card-title"><%= @article.body %></h7>
+   	<h6 class="card-body"><%= @article.body %></h6>
   </div>
   
 </p>
@@ -22,10 +22,10 @@
 <% end %>
 <h2>Comments</h2>
 <%= render @article.comments %>
- 
+
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
-
+<%= "This post have #{@article.impressionist_count} views!" %>
  
 <%= link_to 'Edit', edit_article_path(@article),class: 'btn btn-primary' %> 
 <%= link_to 'Back', articles_path,class: 'btn btn-warning' %>

@@ -57,3 +57,7 @@ gem 'protected_attributes'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem "will_paginate", "~> 3.0.4" 
+#gem for time
+gem 'time_ago_in_words', '~> 0.1.1'
+#gem for trackview
+gem 'impressionist'

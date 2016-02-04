@@ -11,6 +11,7 @@
               method: :delete,
               data: { confirm: 'Are you sure?' }%>
          <%= link_to 'Comments',article_path(article),class: 'btn btn-warning' %> 
+         
          <br>  
          <% article.tags.any? %>
           <% article.tags.each do |tag| %>
