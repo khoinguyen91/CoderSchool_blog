@@ -6,7 +6,6 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     #@articles = Article.all
-     
     if params[:search]
       @articles = Article.search(params[:search])
     #@articles = Article.where(["title || body like ?","%#{params[:search]}%"])

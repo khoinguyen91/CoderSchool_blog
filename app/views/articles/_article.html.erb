@@ -4,8 +4,13 @@
         <div class="card-block">
           <h4 class="card-title"><%= article.title %></h4>
             <p class="card-text"><%= @markdown.render( article.body).html_safe %></p>
+            <p class="card-text"><small class="text-muted">Last updated <%= article.updated_at %></small></p>
         </div>
       <div class ="card-footer">
+        <h6>Comments:</h6>
+            <ul class="list-group">
+              <%= render article.comments %>
+            </ul>
         <%= link_to 'Edit',edit_article_path(article),class: 'btn btn-primary' %>
         <%= link_to 'Delete', article_path(article),class: 'btn btn-danger',
               method: :delete,
@@ -13,6 +18,7 @@
          <%= link_to 'Comments',article_path(article),class: 'btn btn-warning' %> 
          
          <br>  
+         Tags:
          <% article.tags.any? %>
           <% article.tags.each do |tag| %>
           <span class="label label-info">

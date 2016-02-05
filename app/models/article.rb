@@ -6,12 +6,8 @@ class Article < ActiveRecord::Base
   attr_accessible :title, :body, :tag_list
   acts_as_taggable
   is_impressionable
-  def self.search(search)
-  	if search 
-  		where('title like ?', '%#{search}%') 
- 		where('body like ?', '%#{search}%')
- 	else
- 		all
-   	end
+  def self.search(query)
+    # where(:title, query) -> This would return an exact match of the query
+    where("title LIKE ? or body LIKE ?", "%{query}%", "%#{query}%")
   end
 end
