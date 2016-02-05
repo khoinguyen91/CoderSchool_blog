@@ -8,6 +8,6 @@ class Article < ActiveRecord::Base
   is_impressionable
   def self.search(query)
     # where(:title, query) -> This would return an exact match of the query
-    where("title LIKE ? or body LIKE ?", "%{query}%", "%#{query}%")
+    where("title LIKE ? or body LIKE ?", "%#{query}%", "%#{query}%")
   end
 end

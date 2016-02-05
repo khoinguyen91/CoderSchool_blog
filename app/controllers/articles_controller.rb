@@ -5,19 +5,18 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    #@articles = Article.all
+    @articles = Article.all
     if params[:search]
       @articles = Article.search(params[:search])
     #@articles = Article.where(["title || body like ?","%#{params[:search]}%"])
-    else
-      @articles = Article.all
+    
     end
-    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    
     if params[:tag]
       @articles = Article.tagged_with(params[:tag])
-    else
-      @articles = Article.all
+   
     end
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
   end
 
   # GET /articles/1
